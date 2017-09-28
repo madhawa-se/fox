@@ -1,0 +1,23 @@
+name = Fox cash theme
+description = Fox cash theme
+version = 1.2.7
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/theme.css
+stylesheets[all][] = css/tab.css
+stylesheets[print][] = css/print.css
+scripts[] = js/bootstrap.min.js
+scripts[] = js/jquery.multipurpose_tabcontent.js
+scripts[] = js/script.js
+
+
+regions[left]               = Left sidebar
+regions[right]              = Right sidebar
+regions[content]            = Content
+regions[contact_section]    = Contact section
+regions[content_bottom]     = Content bottom
+regions[inner_banner]       = Inner Banner
+regions[header]             = Header
+regions[footer]             = Footer
+regions[footer_bottom]      = footer bottom

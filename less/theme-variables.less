@@ -1,0 +1,156 @@
+// @file: theme-variables.less
+// Add custom variables for use in theme.less
+
+.position-ab {
+    position: @position-absolute;
+}
+.position-re {
+    position: @position-relative;
+}
+.txt-dec-n {
+    text-decoration: @text-decoration;
+}
+.list-ul {
+    ul {
+        padding: 0;
+    }
+}
+.list-style {
+    li {
+        list-style: none !important;
+    }
+}
+
+/* Clears all floats */
+.clear-all {
+    clear: both;
+}
+/* Clears left floats */
+.clear-left {
+    clear: left;
+}
+/* Clears right floats */
+.clear-right {
+    clear: @clear-right;
+}
+.icon-reset {
+    display: inline;
+    color: #5c6b71;
+    font-size: 14px;
+    font-family: FontAwesome;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+@gray-base: #5c6b71;
+@text-color: #5c6b71;
+@color-blue:#004a99;
+@color-orange:#eb6209;
+@color-gray:#ebebeb;
+
+@color-white:#fff;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg: #fff;
+
+//== Typography
+//
+@font-size-base: 18px;
+@font-weight-base: 400;
+@line-height-base: 1.714; // 24/14
+@font-family-droid-sans: "Droid Sans", sans-serif, Helvetica, Arial;
+@font-family-merriweather: "Merriweather", sans-serif, Helvetica, Arial;
+
+@font-size-h1: floor((@font-size-base * 1.778)); // ~32px
+@font-size-h2: floor((@font-size-base * 1.829)); // ~32.93px
+@font-size-h3: ceil((@font-size-base *  1.556)); //  ~28px
+@font-size-h4: ceil((@font-size-base * 1.829)); //  ~32.93px
+@font-size-h5: ceil((@font-size-base * 1.667)); //  ~30px
+@font-size-h6: ceil((@font-size-base * 0.944)); //  ~17px
+
+
+@brand-primary: #004a99;
+@headings-font-weight: 900;
+@headings-color: @brand-primary;
+@text-decoration:none;
+@clear-right: right;
+
+
+//** Global
+@link-color: @brand-primary;
+@link-hover-color: @brand-primary;
+@text-decoration-none: none;
+@link-decoration-underline: underline;
+@link-outline-none: none;
+
+@position-absolute: absolute;
+@position-relative: relative;
+
+
+//* form control
+@input-border-radius: 0;
+@box-shadow: none;
+
+//== Breadcrumbs
+//
+//##
+@breadcrumb-padding-vertical: 12px;
+@breadcrumb-padding-horizontal: 0;
+//** Breadcrumb background color
+@breadcrumb-bg: transparent;
+//** Breadcrumb text color
+@breadcrumb-color: #000;
+//** Text color of current page in the breadcrumb
+@breadcrumb-active-color: #000;
+//** Textual separator for between breadcrumb elements
+@breadcrumb-separator: ">";
+
+//
+// Typography
+// --------------------------------------------------
+
+// Headings
+// -------------------------
+
+h1, .h1 { font-size: @font-size-h1; }
+h2, .h2 { font-size: @font-size-h2; }
+h3, .h3 { font-size: @font-size-h3; }
+h4, .h4 { font-size: @font-size-h4; }
+h5, .h5 { font-size: @font-size-h5; }
+h6, .h6 { font-size: @font-size-h6; }
+
+a {
+    outline: @link-outline-none;
+    color: @link-color;
+    text-decoration: @text-decoration-none;
+}
+a:focus, a:hover {
+    color: @link-hover-color;
+}
+a:link, a:visited {
+    outline: @link-outline-none;
+    text-decoration: @text-decoration-none;
+}
+a:active, a:focus, a:hover {
+    text-decoration: @link-decoration-underline;
+}
+
+blockquote {
+    margin: 20px 0;
+    padding: 30px 0 30px 60px;
+    color: @text-color;
+    font-size: 2.000em;
+    font-weight: 300;
+    line-height: 47px;
+    border-left: 6px solid @brand-primary;
+}

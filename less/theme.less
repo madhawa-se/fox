@@ -1,0 +1,2045 @@
+/**
+ * Custom styles for this theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+@import "bootstrap-less/variables.less";
+@import "bootstrap-less/mixins.less";
+
+//
+// Load custom style for front page edit link
+// --------------------------------------------------
+@import "front-page-edit-link.less";
+
+//
+// Load custom variables
+// --------------------------------------------------
+@import "theme-variables.less";
+
+body {
+    color: @text-color;
+    font-family: @font-family-droid-sans;
+    font-size: @font-size-base;
+    font-weight: @font-weight-base;
+    line-height: @line-height-base;
+    overflow-x: hidden !important;
+    -ms-overflow-style: scrollbar;
+}
+
+/** Helper classes **/
+/* Clears children floats */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+} 
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+a, input[type="submit"] {
+    &:focus {
+        outline: none;
+    }
+}
+.hidden-text {
+    display: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+input[type="submit"], input[type="reset"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 7px 20px;
+    border: none;
+    background: @brand-primary;
+    color: #fff;
+    font-size: 1.111em;
+    border-radius: 5px;
+    &:hover {
+        background: #78cbe0;
+    }
+}
+
+input[type="reset"] {
+    border: none;
+    vertical-align: top
+}
+
+.more-btn {
+    a {
+        display: inline-block;
+        width: 360px;
+        padding: 13px 0;
+        background: @color-orange;
+        color: #fff;
+        font-size: 1.111em;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+            background: #78cbe0;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .more-btn {
+        a {
+            width: 190px;
+            padding: 5px 6px !important;
+            font-size: 0.900em !important;
+            line-height: 30px !important;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .more-btn {
+        a {
+            width: 100%;
+            padding: 10px 6px !important;
+        }
+    }
+}
+
+/** Helper classes **/
+
+#container {
+    margin: 0 -15px;
+}
+
+/*............... page layouts.............*/
+#content-area {
+    .make-row();
+}
+#sidebar-left {
+    .make-sm-column(3);
+}
+#main {
+    .make-sm-column(12);
+}
+#sidebar-right {
+    .make-sm-column(3);
+}
+/*............. left sidebar ...............*/
+.sidebar-left {
+    #sidebar-left {
+        .make-sm-column-pull(9);
+    }
+    #main {
+        .make-sm-column(9);
+        .make-sm-column-push(3);
+    }
+}
+/*............. right sidebar ...............*/
+.sidebar-right {
+    #main {
+        .make-sm-column(9);
+    }
+}
+/*............. two sidebar ...............*/
+.two-sidebars {
+    #sidebar-left {
+        .make-sm-column-pull(6);
+    }
+    #main {
+        .make-sm-column(6);
+        .make-sm-column-push(3);
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: @brand-primary;
+    font-family: @font-family-merriweather;
+}
+
+/*........ Header ........*/
+.header {
+    padding: 25px 0;
+    .social-network {
+        margin-bottom: 30px;
+        p {
+            margin: 0;
+        }
+    }
+    .top-cnt {
+        clear: both;
+        .clear-block {
+            .content {
+                ul {
+                    li {
+                        display: inline-block;
+                        font-size: 0.974em;
+                        a {
+                            color: @text-color;
+                        }
+                        &:nth-child(1), &:nth-child(2) {
+                            &:before {
+                                .icon-reset();
+                                margin-right: 10px;
+                                font-size: 1em;
+                            }
+                        }
+                        &:nth-child(1) {
+                            margin-right: 35px;
+                            &:before {
+                                content: "\f095";
+                            }
+                        }
+                        &:nth-child(2) {
+                            &:before {
+                                content: "\f0e0";
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+/*........ Header ........*/
+
+/*........ Top nav ........*/
+.top-nav {
+    background-color:@color-blue;
+    ul {
+        li {
+            padding: 0;
+            font-size: 0.944em;
+            a {
+                display: inline-block;
+                padding: 16px 10px;
+                color: #fff;
+                text-transform: capitalize;
+            }
+            &.active-trail {
+                a {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .top-login {
+        a {
+            padding: 16px 10px;
+            display: inline-block;
+            border-left: solid 1px #fff;
+            color: #fff;
+        }
+    }
+
+    .search-icon {
+        a {
+            padding: 16px 25px;
+            display: inline-block;
+            border-left: solid 1px #fff;
+            border-right: solid 1px #fff;
+            color: #fff;
+        }
+    }
+}
+#top-nav {
+    &.sticky {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        background: #fff;
+        ul {
+            li {
+                a {
+                    color: @brand-primary;
+                }
+            }
+        }
+        .top-login, .search-icon {
+            a {
+                border-left: solid 1px @brand-primary;
+                color: @brand-primary;
+            }
+        }
+        .search-icon {
+            a {
+                border-right: solid 1px @brand-primary;
+            }
+        }
+    }
+}
+
+/*........ Top nav ........*/
+
+/** Top nav responsive **/
+@media (max-width: 1199px) {
+    .top-nav {
+        ul {
+            li {
+                font-size: 0.850em;
+                a {
+                    padding: 18px 7px;
+                }
+            }
+        }
+        .top-login, .search-icon {
+            a {
+                font-size: 0.850em;
+            }
+        }
+        .top-login {
+            a {
+                padding: 18px 6px;
+            }
+        }
+        .search-icon {
+            a {
+                padding: 18px 20px;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .top-nav {
+        ul {
+            li {
+                font-size: 0.700em;
+                a {
+                    padding: 18px 4px;
+                }
+            }
+        }
+        .top-login, .search-icon {
+            a {
+                font-size: 0.700em;
+            }
+        }
+        .top-login {
+            a {
+                padding: 18px 4px;
+            }
+        }
+        .search-icon {
+            a {
+                padding: 18px 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .mobile-logo {
+        padding: 0 0 0 15px;
+    }
+    .mobile-menu {
+        margin: 0;
+        border: none;
+        background: #fff;
+        .navbar-toggle {
+            margin-top: 4px;
+            margin-right: 5px;
+            border-color: transparent;
+            .icon-bar {
+                width: 18px;
+                height: 3px;
+                margin-top: 3px;
+                background: #5c6b71;
+            }
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+        .top-nav {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            margin-top: 0;
+            padding-top: 0;
+            background: none;
+            text-align: left;
+            ul {
+                display: block;
+                margin-top: 10px;
+            }
+            li {
+                float: none;
+                font-size: .950em;
+                a {
+                    display: block;
+                    padding: 3px 0;
+                    color: #5c6b71;
+                    &:hover {
+                        background: transparent;
+                        color: #5c6b71;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .bottom-space {
+                margin-top: 10px;
+            }
+        }
+        .navbar-header {
+            padding: 8px 0;
+        }
+        &.navbar-default {
+            .navbar-collapse {
+                .btn {
+                    border: solid 1px #5c6b71;
+                    color: #5c6b71;
+                    border-radius: 0;
+                    &:hover {
+                        background: #5c6b71;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .mobile-header-top {
+        margin: 10px 10px 0 0;
+        padding: 0;
+        text-align: right;
+        li {
+            display: inline-block;
+            margin-left: 18px;
+            a {
+                color: #5c6b71;
+            }
+            i {
+                font-size: 1.056em;
+                &:hover {
+                    color: #5c6b71;
+                }
+            }
+        }
+    }
+    #mobile-header {
+        &.sticky {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+        }
+    }
+
+}
+
+/** Top nav responsive **/
+
+/** Slide show **/
+.jumbotron {
+    margin-bottom: 40px;
+    padding: 0;
+    ul {
+        margin: 0;
+        li {
+            overflow: hidden;
+            .banner-image {
+                img {
+                    width: 100%;
+                }
+            }
+            .slide-content {
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                .container, .row {
+                    height: 100%;
+                }
+                .col-sm-6 {
+                    float: right;
+                    height: 100%;
+                    margin-right: 110px;
+                }
+                .slide-box {
+                    height: 100%;
+                    padding: 0 55px 0 35px;
+                    background-color: rgba(0, 74, 153, 0.7);
+                    color: #fff;
+                    .slide-text {
+                        top: 47%;
+                        transform: translateY(-50%);
+                        -webkit-transform: translateY(-50%);
+                        -moz-transform: translateY(-50%);
+                    }
+                    .strapline-text {
+                        margin-bottom: 20px;
+                        font-size: 1.667em;
+                        line-height: 47px;
+                    }
+                    .action-text {
+                        text-align: center;
+                        a {
+                            display: block;
+                            margin: 0 auto;
+                            padding: 12px 0;
+                            background: @color-orange;
+                            color: @color-white;
+                            font-size: 1.111em;
+                            line-height: 36.44px;
+                            text-decoration: none;
+                            &:hover,&:focus {
+                                background:@color-white;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .control-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    .control {
+        max-width: none;
+        height: 100%;
+        .slide-control {
+            top: 50%;
+            left: 16px;
+            margin-top: -24px;
+            z-index: 999;
+            width: 80px;
+            height: 66px;
+            padding: 18px 0;
+            background: rgba(0, 74, 153, 0.7);
+            text-align: center;
+            text-decoration: none;
+            &:hover{
+                background-color: rgba(235, 98, 9, 0.7);
+            }
+        }
+        .slide-control-left, .slide-control-right {
+            &:before {
+                content: "";
+                display: block;
+                margin: 0 auto;
+                width: 29px;
+                height: 31px;
+            }
+        }
+        .slide-control-left {
+            &:before {
+                background: url("../images/next-prev.png") no-repeat left 0;
+            }
+        }
+        .slide-control-right {
+            left: auto;
+            right: 15px;
+            &:before {
+                background: url("../images/next-prev.png") no-repeat right 0;
+            }
+        }
+    }
+}
+/** Slide show **/
+
+/** Slide show responsive **/
+@media (max-width: 1199px) {
+    .jumbotron {
+        ul {
+            li {
+                .slide-content {
+                    .slide-box {
+                        padding: 0 35px 0 20px;
+                        .strapline-text {
+                            font-size: 1.500em;
+                            line-height: 37px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .jumbotron {
+        ul {
+            li {
+                .slide-content {
+                    .slide-box {
+                        padding: 0 25px 0 25px;
+                        .strapline-text {
+                            font-size: 1.000em;
+                            line-height: 23px;
+                        }
+                    }
+                }
+            }
+        }
+        .control {
+            .slide-control {
+                width: 50px;
+                height: 50px;
+                padding: 11px 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .jumbotron {
+        ul {
+            li {
+                .banner-image {
+                    &:before {
+                        position: absolute;
+                        content: "\00a0";
+                        height: 100%;
+                        width: 100%;
+                        background: rgba(52, 52, 52, 0.7);
+                    }
+                }
+                .slide-content {
+                    .col-sm-6 {
+                        float: none;
+                        margin: 0;
+                    }
+                    .slide-box {
+                        min-height: auto;
+                        padding: 0;
+                        background: transparent;
+                        text-align: center;
+                        .slide-text {
+                            top: 50%;
+                        }
+                        .strapline-text {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .jumbotron {
+        ul {
+            li {
+                .slide-content {
+                    .slide-box {
+                        .strapline-text {
+                            font-size: 0.800em;
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** Slide show responsive **/
+
+/** Home page **/
+.front-page {
+    h1 {
+        margin-bottom: 30px;
+    }
+    .front-btn {
+        display: inline-block;
+        margin: 40px 28px 0 0;
+        a {
+            text-decoration: none;
+        }
+    }
+    .front-btn-2 {
+        margin-right: 0;
+    }
+}
+
+/** Front services **/
+.front-services {
+    padding: 60px 0 30px;
+    .tab_wrapper {
+        margin: 0;
+    }
+    .tab_list {
+        margin-bottom: 0;
+        .fnt-services-icon {
+            float: left;
+            margin: 0 50px 0 30px;
+        }
+        .fnt-services-box {
+            float: left;
+            width: 59%;
+        }
+        .fnt-services-title {
+            margin-bottom: 10px;
+            font-size: 1.667em;
+            font-family: @font-family-merriweather;
+            line-height: 25px;
+        }
+        .fnt-services-teaser {
+            line-height: 24px;
+        }
+    }
+    .tab_content {
+        h2 {
+            margin-bottom: 35px;
+            color: #12b1b7;
+        }
+    }
+    .frnt-services-cnt {
+        p {
+            margin-bottom: 30px;
+        }
+    }
+}
+/** Front services **/
+
+/** Front testimonial **/
+.front-testimonial {
+    margin-bottom: 60px;
+    .container {
+        position: relative;
+    }
+    .view-header {
+        padding: 0 60px;
+        margin-bottom: 40px;
+    }
+    .view-content {
+        padding: 0 60px;
+        ul {
+            padding: 0;
+            z-index: 999;
+            li {
+                //min-height: 295px;
+                min-height: 368px;
+            }
+        }
+        .testimonial-box {
+            .without-img {
+                text-align: center;
+            }
+            .with-client-image {
+                padding: 0 15px;
+                text-align: left;
+            }
+            .teaser {
+                margin-bottom: 40px;
+                font-size: 1em;
+                font-family: @font-family-merriweather;
+                line-height: 37px;
+                font-weight: 300;
+                font-style: italic;
+            }
+            .auther,.job-title,.company {
+                font-size: 0.889em;
+            }
+            .action-text {
+                margin-top: 50px;
+            }
+        }
+    }
+    .view-footer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        .controls {
+            .slide-control {
+                position: absolute;
+                top: 50%;
+                z-index: 999;
+            }
+            .slide-control-left, .slide-control-right {
+                &:before {
+                    content: "";
+                    display: block;
+                    margin: 0 auto;
+                    width: 29px;
+                    height: 31px;
+                }
+            }
+            .slide-control-left {
+                left: 16px;
+                &:before {
+                    background: url("../images/testimonial-next-prev.png") no-repeat left 0;
+                }
+            }
+            .slide-control-right {
+                left: auto;
+                right: 16px;
+                &:before {
+                    background: url("../images/testimonial-next-prev.png") no-repeat right 0;
+                }
+            }
+        }
+    }
+}
+/** Front testimonial **/
+
+/** Front feeds **/
+.front-feeds {
+    .feed-box {
+        &.odd, &.even {
+            .feed-img {
+                &:before {
+                    position: absolute;
+                    content: "\00a0";
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        &.odd {
+            .feed-img {
+                &:before {
+                    background: rgba(83,177,201,0.80);
+                }
+            }
+            .contant-section {
+                .path {
+                    a {
+                        &:hover {
+                            color: #53b1c9;
+                        }
+                    }
+                }
+            }
+        }
+        &.even {
+            .feed-img {
+                &:before {
+                    background: rgba(134,130,221,0.60);
+                }
+            }
+            .contant-section {
+                .path {
+                    a {
+                        &:hover {
+                            color: #8682dd;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .blog-box {
+        &.odd {
+            .feed-img {
+                &:before {
+                    background: rgba(134,130,221,0.60);
+                }
+            }
+        }
+    }
+    .contant-section {
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #fff;
+        text-align: center;
+        h2 {
+            margin: 0 0 30px 0;
+            color: #fff;
+            font-size: 1.667em;
+        }
+        .title {
+            padding: 0 20px;
+            font-size: 1.222em;
+            line-height: 30px;
+        }
+        .created {
+            margin-top: 15px;
+            font-size: 0.778em;
+        }
+        .path {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 48px;
+            font-size: 0.889em;
+            a {
+                display: inline-block;
+                padding: 8px 41px;
+                color: #fff;
+                border: solid 3px #fff;
+                border-radius: 5px;
+                &:hover {
+                    background: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+/** Front feeds **/
+
+/** Front accreditations **/
+.front-accreditations {
+    margin-top: 40px;
+    ul {
+        li {
+            display: inline-block;
+            margin: 0 9%;
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+}
+/** Front accreditations **/
+
+/** Home page **/
+
+/** Home page responsive **/
+
+@media all and (max-width: 1295px) and (min-width: 1199px) {
+
+    /** Front services **/
+    .front-services {
+        .tab_wrapper.right_side > ul li {
+            padding: 20px 18px;
+        }
+    }
+    /** Front services **/
+
+}
+
+@media (max-width: 1199px) {
+
+    /** Front services **/
+    .front-services {
+        .tab_list {
+            .fnt-services-icon {
+                margin: 0 30px;
+            }
+            .fnt-services-box {
+                width: 69%;
+            }
+            .fnt-services-teaser {
+                line-height: 21px;
+            }
+        }
+    }
+    /** Front services **/
+
+    /** Front feeds **/
+    .front-feeds {
+        .contant-section {
+            top: 30px;
+            h2 {
+                margin: 0 0 20px 0;
+            }
+            .title {
+                font-size: 1.2em;
+                line-height: 28px;
+            }
+            .path {
+                bottom: 30px;
+            }
+        }
+    }
+    /** Front feeds **/
+
+    /** Front accreditations **/
+    .front-accreditations {
+        ul {
+            li {
+                margin: 0 7%;
+            }
+        }
+    }
+    /** Front accreditations **/
+
+}
+
+@media (max-width: 991px) {
+
+    /** Front services **/
+    .front-services {
+        .tab_list {
+            .fnt-services-icon {
+                width: 17%;
+            }
+            .fnt-services-box {
+                width: 66%;
+            }
+            .fnt-services-title {
+                font-size: 1.400em;
+            }
+            .fnt-services-teaser {
+                font-size: 15px;
+                line-height: 19px;
+            }
+
+        }
+        .content_wrapper {
+            .frnt-services-cnt {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+    /** Front services **/
+
+    /** Front testimonial **/
+    .front-testimonial {
+        margin-bottom: 20px;
+        .view-header {
+            h2 {
+                font-size: 1.500em;
+            }
+        }
+        .view-content {
+            padding: 0 50px;
+            ul {
+                li {
+                    min-height: 250px;
+                }
+            }
+            .testimonial-box {
+                .teaser {
+                    margin-bottom: 25px;
+                    font-size: 0.900em;
+                    line-height: 25px;
+                }
+                .auther {
+                    margin-bottom: 25px;
+                    font-size: 0.800em;
+                }
+            }
+        }
+    }
+    /** Front testimonial **/
+
+    /** Front feeds **/
+    .front-feeds {
+        .contant-section {
+            top: 22px;
+            h2 {
+                margin: 0 0 13px 0;
+                font-size: 1.200em;
+            }
+            .title {
+                padding: 0 18px;
+                font-size: 0.800em;
+                line-height: 20px;
+            }
+            .created {
+                margin-top: 11px;
+                font-size: 0.700em;
+            }
+            .path {
+                bottom: 20px;
+                font-size: 0.700em;
+                a {
+                    padding: 5px 41px;
+                }
+            }
+        }
+    }
+    /** Front feeds **/
+
+    /** Front accreditations **/
+    .front-accreditations {
+        ul {
+            li {
+                margin: 0 4%;
+            }
+        }
+    }
+    /** Front accreditations **/
+}
+
+@media (max-width: 767px) {
+    .front-page {
+        .front-btn {
+            display: block;
+            margin: 30px 0 0 0;
+        }
+    }
+
+    /** Front testimonial **/
+    .front-testimonial {
+        margin-bottom: 0;
+        text-align: center;
+        .view-header {
+            padding: 0;
+            h2 {
+                margin-bottom: 30px;
+            }
+        }
+        .view-content {
+            padding: 0;
+            ul {
+                li {
+                    min-height: 274px;
+                }
+            }
+            .testimonial-box {
+                .with-client-image {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    /** Front testimonial **/
+
+    /** Front feeds **/
+    .front-feeds {
+        .feed-box {
+            margin-bottom: 40px;
+            .feed-callout {
+                .img-section {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .contant-section {
+            top: 50%;
+            bottom: auto;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            .path {
+                position: relative;
+                bottom: 0;
+                margin: 40px 15px 0;
+                font-size: 0.900em;
+                a {
+                    width: 100%;
+                    padding: 8px 0;
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+    /** Front feeds **/
+
+    /** Front accreditations **/
+    .front-accreditations {
+        margin-top: 0;
+        ul {
+            li {
+                width: 100%;
+                margin: 40px 0;
+            }
+        }
+    }
+    /** Front accreditations **/
+}
+
+/** Home page responsive **/
+
+/** Footer **/
+.footer {
+    margin-top: 40px;
+    padding: 55px 0 60px;
+    background: @color-blue;
+    color: #fff;
+    .consultation-box {
+        h2 {
+            margin: 0 0 30px;
+            color: #fff;
+            font-size: 1.667em;
+        }
+        .clear-block {
+            .content {
+                padding-right: 30%;
+                p {
+                    font-size: 1.222em;
+                    line-height: 30px;
+                    a {
+                        display: inline-block;
+                        width: 264px;
+                        margin-top: 40px;
+                        padding: 10px 0;
+                        background: @color-orange;
+                        color: #fff;
+                        font-size: 0.773em;
+                        border-radius: 5px;
+                        text-align: center;
+                        text-decoration: none;
+                        &:hover {
+                            background: #78cbe0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .find-us, .contact-us {
+        h2 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 1.000em;
+            font-family: @font-family-droid-sans;
+        }
+        ul {
+            li {
+                font-size: 0.889em;
+                line-height: 28px;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        display: inline-block;
+        width: 100%;
+        margin-top: 40px;
+    }
+    .footer-text {
+        margin-top: 30px;
+        clear: both;
+    }
+    .utilities-menu {
+        margin-top: 40px;
+        ul {
+            li {
+                float: left;
+                margin: 0;
+                padding: 0;
+                font-size: 0.889em;
+                line-height: 44px;
+                a {
+                    display: inline-block;
+                    padding: 0 10px;
+                    border-right: 1px solid #fff;
+                    color: #fff;
+                    line-height: 16px;
+                }
+                &.last {
+                    a {
+                        border: none;
+                    }
+
+                }
+            }
+        }
+    }
+    .social-network {
+        margin-top: 40px;
+        padding-right: 15px;
+        clear: both;
+    }
+}
+/** Footer **/
+
+/** Footer responsive **/
+@media (max-width: 1199px) {
+    .footer {
+        .utilities-menu {
+            ul {
+                li {
+                    a {
+                        padding: 0 9px;
+                    }
+                }
+            }
+        }
+        .consultation-box {
+            .clear-block {
+                .content {
+                    padding-right: 15%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .footer {
+        .find-us, .contact-us {
+            ul {
+                li {
+                    font-size: 0.740em;
+                    line-height: 24px;
+                    word-break: break-all;
+                }
+            }
+        }
+        .utilities-menu {
+            ul {
+                li {
+                    font-size: 0.700em;
+                    line-height: 44px;
+                    a {
+                        padding: 0 6px;
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+        .consultation-box {
+            h2 {
+                font-size: 1.200em;
+            }
+            .clear-block {
+                .content {
+                    padding-right: 15%;
+                    p {
+                        font-size: 0.800em;
+                        line-height: 21px;
+                        a {
+                            width: 240px;
+                            margin-top: 20px;
+                            padding: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        padding: 40px 0;
+        .consultation-box {
+            margin-bottom: 40px;
+            text-align: center;
+            .clear-block {
+                .content {
+                    padding-right: 0;
+                }
+            }
+        }
+        .find-us, .contact-us {
+            ul {
+                li {
+                    font-size: 0.600em;
+                    line-height: 18px;
+                }
+            }
+        }
+        .social-network {
+            float: left !important;
+            margin-top: 20px;
+            padding-left: 15px;
+        }
+        .utilities-menu {
+            margin-top: 20px;
+            ul {
+                text-align: center;
+                li {
+                    display: inline-block;
+                    float: none;
+                    font-size: 0.889em;
+                    line-height: 25px;
+                }
+            }
+        }
+    }
+}
+
+/** Footer responsive **/
+
+/** Inner page */
+.terms-inline {
+    display: none;
+}
+.pager {
+    li {
+        margin: 0 !important;
+        background: transparent !important;
+    }
+}
+
+/** Inner banners **/
+.inner-banner {
+    .inner-banner-cnt {
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        .container, .row {
+            height: 100%;
+        }
+    }
+    .banner-image {
+        &:before {
+            position: absolute;
+            content: "\00a0";
+            height: 100%;
+            width: 100%;
+            background: rgba(52, 52, 52, 0.7);
+        }
+    }
+    img {
+        width: 100%; 
+    }
+    .bg-width {
+        height: 100%;
+    }
+    .banner-content {
+        height: 100%;
+        color: #fff;
+        background: rgba(58, 138, 158, 0.7);
+        h1 {
+            top: 50%;
+            margin: 0 28px;
+            color: #fff;
+            font-size: 2.222em;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+        }
+    }
+}
+/** Inner banners **/
+
+.not-front {
+    #content-content {
+        ul {
+            margin-top: 30px;
+            padding-left: 95px;
+            li {
+                margin-bottom: 30px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+/** inner page **/
+.inner-page {
+    #content {
+        h1 {
+            margin:  0 0 50px;
+            font-size: 2.222em;
+            line-height: 52px;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+    }
+}
+/** inner page **/
+
+/** Breadcrumb **/
+.breadcrumb {
+    margin-bottom: 10px;
+    background: none;
+    li{ 
+        font-size: 0.778em;
+        a {
+            color: #7d7d7d;
+        }
+        &.active {
+            color: #65b8ce;
+        }
+        + li {
+            &:before {
+                .icon-reset();
+                content: '\f105';
+                color: #7d7d7d;
+            }
+        }
+    }
+}
+/** Breadcrumb **/
+
+/** left sidebar **/
+.leftside-menu {
+    h2 {
+        margin: 0 0 15px;
+        font-size: 1.500em;
+    }
+    ul {
+        padding: 0;
+        li {
+            margin: 0;
+            padding: 6px 0;
+            font-size: 1.111em;
+            line-height: 29px;
+            a {
+                display: block;
+                color: @brand-primary;
+                //text-transform: capitalize;
+                &.active-trail {
+                    font-weight: bold;
+                }
+            }
+            ul {
+                li {
+                    padding-bottom: 10px;
+                    line-height: 27px;
+                    font-size: 0.870em;
+                    a {
+                        color: #656565;
+                    }
+                    ul {
+                        li {
+                            padding: 5px 0;
+                            line-height: 23px;
+                            font-size: 0.780em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/** left sidebar **/
+
+/** left sidebar blog **/
+.sidebar-blog {
+    margin-top: 25px;
+    .view-header {
+        h2 {
+            font-size: 1.111em;
+            font-weight: 700;
+        }
+    }
+    .title, .teaser {
+        font-size: 0.889em;
+        line-height: 24px;
+        font-weight: 700;
+        a {
+            color: #4f4f4f;
+        }
+    }
+    .teaser {
+        font-weight: 400;
+    }
+}
+/** left sidebar blog **/
+
+/** left sidebar testimonials **/
+.sidebar-testimonials {
+    margin-top: 40px;
+    .teaser {
+        font-size: 1.111em;
+        font-family: @font-family-merriweather;
+        line-height: 30px;
+        font-weight: 300;
+    }
+    .author {
+        margin-top: 5px;
+        color: #4f4f4f;
+        font-size: 0.889em;
+        line-height: 30px;
+    }
+    .path {
+        margin-top: 20px;
+        a {
+            width: auto;
+            padding: 13px 40px;
+        }
+    }
+}
+/** left sidebar testimonials **/
+
+/** landing page lists **/
+.landing-page{
+    .view-row{
+        margin: 0 0 30px;
+        a{
+            display: block;
+            background: rgba(83, 177, 201, 0.4);
+            color: #fff;
+            .content{
+                left: 15px;
+                bottom: 0;
+                right: 15px;
+                margin: 0 0 10px;
+                padding: 0 15px;
+                .node-title{
+                    font-size: 1.111em;
+                    font-family: @font-family-merriweather;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+                .node-teaser{
+                    font-size: 0.944em;
+                }
+            }
+            .thumb-image{
+                z-index: -1;
+                img{
+                    width:100%;
+                }
+            }
+            .overlay{
+                position: absolute;
+                top: 0;
+                left: 15px;
+                bottom: 0;
+                right: 15px;
+                height: 100%;
+                opacity: 0;
+                background-color: #53b1c9;
+            }
+            &:hover{
+                text-decoration: none;
+                .overlay{
+                    opacity: 1;
+                }
+                .node-title{
+                    z-index: 1;
+                }
+                .node-teaser{
+                    z-index: 1;
+                }
+            }
+        }
+        &:last-child {
+            margin-bottom: 11px;
+        }
+    }
+}
+/** landing page lists **/
+
+/** Staff landing **/
+#staff-directory {
+    .view-content {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+.staff-list {
+    margin-bottom: 33px;
+    .profile {
+        margin: 0;
+        .staff-image {
+            &:before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: rgba(83, 177, 201, 0.4);
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .overlay {
+            top: 0;
+            bottom: 0;
+            display: none;
+            width: 100%;
+        }
+        .staff-detail {
+            bottom: 0;
+            margin-bottom: 15px;
+            padding: 0 15px;
+            width: 100%;
+        }
+    }
+    .more-section {
+        margin-top: 20px;
+        .more-btn {
+            margin-top: 20px;
+            font-size: 0.833em;
+            a {
+                width: 100%;
+                padding: 10px 0;
+            }
+        }
+    }
+    &:hover {
+        .overlay {
+            display: block;
+            background: @brand-primary;
+            color: #fff;
+        }
+    }
+
+}
+/** Staff landing **/
+
+/** Staff inner page **/
+.section-staff-directory {
+    #content {
+        .staff-info {
+            h1 {
+                margin-bottom: 20px;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .field-field-expertise-staff {
+        margin-top: 40px;
+        .field-label {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: @text-color;
+            font-size: 1.100em;
+            font-family: @font-family-merriweather;
+            font-weight: 400;
+        }
+    }
+    #profile-body {
+        table {
+            td {
+                padding: 10px;
+            }
+        }
+    }
+}
+/** Staff inner page **/
+
+/** Testimonials **/
+.testimonials-box {
+    margin-bottom: 40px;
+    .body {
+        p {
+            margin-bottom: 10px !important;
+        }
+    }
+}
+/** Testimonials **/
+
+/** CTA Banner **/
+.cta-banner {
+    margin: 40px 0;
+    .clear-block {
+        .content {
+            padding: 15px 30px;
+            background: #ebebeb;
+            h2 {
+                margin-top: 0;
+                color: #12b1b7;
+                line-height: 49px;
+            }
+            p {
+                a {
+                    display: inline-block;
+                    width: 360px;
+                    margin-top: 5px;
+                    padding: 13px 0;
+                    background: #53b1c9;
+                    color: #fff;
+                    font-size: 1.111em;
+                    border-radius: 5px;
+                    text-align: center;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+/** CTA Banner **/
+
+/** News & blog page **/
+.inner-update {
+    margin-bottom: 40px;
+    h2 {
+        margin-bottom: 15px !important;
+        font-size: 1.778em !important;
+        line-height: 45px !important;
+    }
+    .node-post-date {
+        font-size: 0.850em;
+    }
+    .node-teaser {
+        p {
+            margin-bottom: 10px !important;
+        }
+    }
+    .more-btn {
+        a {
+            display: inline-block;
+            width: auto;
+            padding: 7px 15px;
+            font-size: 0.850em;
+        }
+    }
+}
+/** News & blog page **/
+
+/** Contact page **/
+.company-information {
+    tbody {
+        border: none;
+    }
+    input[type="text"] {
+        height: 45px;
+    }
+}
+.contact-form {
+    margin-top: 40px;
+}
+/** Contact page **/
+
+.section-cookies,
+.section-accessibility-statement,
+.section-terms-and-conditions, {
+    .inner-banner {
+        display: none;
+    }
+}
+
+.section-sitemap {
+    .site-map {
+        ul {
+            li {
+                margin-bottom: 0 !important;
+                ul {
+                    margin-top: 10px !important;
+                    padding-left: 25px !important;
+                }
+            }
+        }
+    }
+}
+
+/** Inner page */
+
+/** Inner page responsive **/
+@media (max-width: 1199px) {
+
+    /** landing page lists **/
+    .landing-page {
+        .view-row {
+            a{
+                .content {
+                    .node-title {
+                        font-size: 0.900em;
+                    }
+                    .node-teaser {
+                        font-size: 0.800em;
+                    }
+                }
+            }
+        }
+    }
+    /** landing page lists **/
+
+    /** Staff landing **/
+    .staff-list {
+        .profile {
+            .staff-detail {
+                .email {
+                    font-size: 0.833em;
+                }
+            }
+        }
+    }
+    /** Staff landing **/
+}
+
+@media(max-width:991px) {
+
+    /** Inner banners **/
+    .inner-banner {
+        .banner-content {
+            h1 {
+                margin: 0 15px;
+                font-size: 1.200em;
+            }
+        }
+    }
+    /** Inner banners **/
+
+    /** left sidebar **/
+    .leftside-menu {
+        ul {
+            li {
+                margin-bottom: 10px;
+                font-size: 0.900em;
+                line-height: 26px;
+                ul {
+                    li {
+                        margin-bottom: 0;
+                        padding-bottom: 8px;
+                        font-size: 0.820em;
+                        line-height: 19px;                       
+                    }
+                }
+            }
+        }
+    }
+    /** left sidebar **/
+
+    /** left sidebar testimonials **/
+    .sidebar-testimonials {
+        .teaser {
+            font-size: 0.900em;
+            line-height: 23px;
+        }
+        .author {
+            font-size: 0.780em;
+        }
+        .path {
+            a {
+                padding: 8px 15px !important;
+            }
+        }
+    }
+    /** left sidebar testimonials **/
+
+    /** Staff landing **/
+    .staff-list {
+        .profile {
+            .staff-detail {
+                padding: 0 5px;
+                .position, .telephone, .email {
+                    font-size: 0.700em;
+                }
+                .email {
+                    word-break: break-word;
+                }
+            }
+        }
+        .more-section {
+            .name {
+                font-size: 0.850em;
+            }
+            .more-btn {
+                font-size: 0.800em;
+            }
+        }
+    }
+    /** Staff landing **/
+
+    /** Contact page **/
+    .company-information {
+        font-size: 0.780em;
+    }
+    /** Contact page **/
+
+}
+@media (max-width: 767px) {
+
+    /** Inner banners **/
+    .inner-banner {
+        .banner-content {
+            h1 {
+                font-size: 1.000em;
+            }
+        }
+    }
+    /** Inner banners **/
+
+    .not-front {
+        #content-content {
+            ul {
+                padding-left: 25px;
+            }
+        }
+    }
+
+    /** Staff landing **/
+    .staff-list {
+        .profile {
+            .staff-detail {
+                padding: 0 15px;
+                .position, .telephone, .email {
+                    font-size: 0.900em;
+                }
+            }
+        }
+        .more-section {
+            .name, .more-btn {
+                font-size: 0.900em;
+            }
+        }
+    }
+    /** Staff landing **/
+
+    /** Staff inner page **/
+    .section-staff-directory {
+        .field-field-expertise-staff {
+            margin-bottom: 20px;
+        }
+    }
+    /** Staff inner page **/
+
+    /** landing page lists **/
+    .landing-page {
+        .view-row {
+            a{
+                .content {
+                    .node-title {
+                        margin-bottom: 5px;
+                        font-size: 0.900em;
+                    }
+                    .node-teaser {
+                        font-size: 0.800em;
+                    }
+                }
+            }
+        }
+    }
+    /** landing page lists **/
+
+    /** CTA Banner **/
+    .cta-banner {
+        .clear-block {
+            .content {
+                p {
+                    a {
+                        display: block;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+    /** CTA Banner **/
+
+    .inner-update {
+        .more-btn {
+            a {
+                padding: 7px 15px !important;
+            }
+        }
+    }
+
+    /** Contact page **/
+    .contact-map {
+        margin-top: 30px;
+    }
+    /** Contact page **/
+
+    .cta-banner {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    /** Staff landing **/
+    .staff-list {
+        &.col-xs-6 {
+            width: 100%;
+        }
+    }
+    /** Staff landing **/
+
+}
+/** Inner page responsive **/
+.search-results{
+    .search-info{
+        display: none;
+    }
+}
+
+/* video panel*/
+.video-panel{
+    background-color: @color-gray;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .title{
+        font-size: 1.556em;
+        margin-top: 0;
+        margin-bottom: 1.786em;
+    }
+    .paragraph{
+    }
+}
