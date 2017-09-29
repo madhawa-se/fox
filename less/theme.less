@@ -1143,7 +1143,7 @@ h1,h2,h3,h4,h5,h6 {
 
 /** Footer **/
 .footer {
-    margin-top: 40px;
+    //margin-top: 40px;
     padding: 55px 0 60px;
     background: @color-blue;
     color: #fff;
@@ -2030,8 +2030,17 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* video panel*/
-.video-panel{
+.video-panel,.benifits-panel{
     background-color: @color-gray;
+}
+.work-panel{
+
+}
+.video-panel,.work-panel,.benifits-panel,.booking-panel{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.video-panel,.work-panel{
     padding-top: 80px;
     padding-bottom: 80px;
 
@@ -2041,5 +2050,22 @@ h1,h2,h3,h4,h5,h6 {
         margin-bottom: 1.786em;
     }
     .paragraph{
+    }
+}
+
+.benifits-panel{
+    ul {
+        li{
+            float: left;
+            width: 50%;
+            text-align: left;
+        }
+    }
+}
+.booking-panel{
+    color:@color-white;
+    background-color: #477eb6;
+    h2,a{
+        color:inherit;
     }
 }
