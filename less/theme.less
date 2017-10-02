@@ -645,7 +645,14 @@ h1,h2,h3,h4,h5,h6 {
 /** Slide show responsive **/
 
 /** Home page **/
+.front{
+    #content{
+        margin-top: 15px;
+        margin-bottom: 60px;
+    } 
+}
 .front-page {
+
     h1 {
         margin-bottom: 30px;
     }
@@ -2033,9 +2040,6 @@ h1,h2,h3,h4,h5,h6 {
 .video-panel,.benifits-panel{
     background-color: @color-gray;
 }
-.work-panel{
-
-}
 .video-panel,.work-panel,.benifits-panel,.booking-panel{
     padding-top: 80px;
     padding-bottom: 80px;
@@ -2047,19 +2051,69 @@ h1,h2,h3,h4,h5,h6 {
     .title{
         font-size: 1.556em;
         margin-top: 0;
-        margin-bottom: 1.786em;
+        margin-bottom: 1.3em;
     }
     .paragraph{
     }
 }
-
+.work-panel{
+    padding-top: 70px;
+}
 .benifits-panel{
     ul {
         li{
             float: left;
             width: 50%;
             text-align: left;
+            list-style: none !important;
+            &:before{
+                .icon-reset;
+                color:@color-blue;
+                font-size: 1.333em;
+            }
+            &:nth-child(1),&:nth-child(3),&:nth-child(5){
+                float: left;
+                clear: left;
+            }
+            &:nth-child(2),&:nth-child(4),&:nth-child(6){
+                float: right;
+                clear: right;
+            }
+            &:nth-child(1){
+                &:before {
+                    content: "\f08a";
+                }
+            }
+            &:nth-child(2){
+                clear:left;
+                &:before {
+                    content: "\f1cd";
+                }
+            }
+            &:nth-child(3){
+                &:before {
+                    content: "\f0e8";
+                }
+            }
+            &:nth-child(4){
+                &:before {
+                    content: "\f1eb";
+                }
+            }
+            &:nth-child(5){
+                &:before {
+                    content: "\f219";
+                }
+            }
+            &:nth-child(6){
+                clear:left;
+                &:before {
+                    content: "\f046";
+                }
+            }
         }
+
+
     }
 }
 .booking-panel{
@@ -2067,5 +2121,8 @@ h1,h2,h3,h4,h5,h6 {
     background-color: #477eb6;
     h2,a{
         color:inherit;
+    }
+    p{
+        padding: 20px 10px;
     }
 }

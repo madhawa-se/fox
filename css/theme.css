@@ -48,6 +48,7 @@
 .icon-reset {
   display: inline;
   color: #5c6b71;
+  padding-right: 15px;
   font-size: 14px;
   font-family: FontAwesome;
   font-weight: 400;
@@ -82,7 +83,7 @@ h6,
 }
 a {
   outline: none;
-  color: #004a99;
+  color: #eb6209;
   text-decoration: none;
 }
 a:focus,
@@ -330,6 +331,7 @@ h6 {
 .header .top-cnt .clear-block .content ul li:nth-child(2):before {
   display: inline;
   color: #5c6b71;
+  padding-right: 15px;
   font-size: 14px;
   font-family: FontAwesome;
   font-weight: 400;
@@ -695,6 +697,10 @@ h6 {
 }
 /** Slide show responsive **/
 /** Home page **/
+.front #content {
+  margin-top: 15px;
+  margin-bottom: 60px;
+}
 .front-page h1 {
   margin-bottom: 30px;
 }
@@ -1316,6 +1322,7 @@ h6 {
 .breadcrumb li + li:before {
   display: inline;
   color: #5c6b71;
+  padding-right: 15px;
   font-size: 14px;
   font-family: FontAwesome;
   font-weight: 400;
@@ -1777,12 +1784,66 @@ h6 {
 .work-panel .title {
   font-size: 1.556em;
   margin-top: 0;
-  margin-bottom: 1.786em;
+  margin-bottom: 1.3em;
+}
+.work-panel {
+  padding-top: 70px;
 }
 .benifits-panel ul li {
   float: left;
   width: 50%;
   text-align: left;
+  list-style: none !important;
+}
+.benifits-panel ul li:before {
+  display: inline;
+  color: #5c6b71;
+  padding-right: 15px;
+  font-size: 14px;
+  font-family: FontAwesome;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #004a99;
+  font-size: 1.333em;
+}
+.benifits-panel ul li:nth-child(1),
+.benifits-panel ul li:nth-child(3),
+.benifits-panel ul li:nth-child(5) {
+  float: left;
+  clear: left;
+}
+.benifits-panel ul li:nth-child(2),
+.benifits-panel ul li:nth-child(4),
+.benifits-panel ul li:nth-child(6) {
+  float: right;
+  clear: right;
+}
+.benifits-panel ul li:nth-child(1):before {
+  content: "\f08a";
+}
+.benifits-panel ul li:nth-child(2) {
+  clear: left;
+}
+.benifits-panel ul li:nth-child(2):before {
+  content: "\f1cd";
+}
+.benifits-panel ul li:nth-child(3):before {
+  content: "\f0e8";
+}
+.benifits-panel ul li:nth-child(4):before {
+  content: "\f1eb";
+}
+.benifits-panel ul li:nth-child(5):before {
+  content: "\f219";
+}
+.benifits-panel ul li:nth-child(6) {
+  clear: left;
+}
+.benifits-panel ul li:nth-child(6):before {
+  content: "\f046";
 }
 .booking-panel {
   color: #ffffff;
@@ -1791,4 +1852,7 @@ h6 {
 .booking-panel h2,
 .booking-panel a {
   color: inherit;
+}
+.booking-panel p {
+  padding: 20px 10px;
 }

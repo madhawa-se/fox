@@ -147,11 +147,11 @@ $book_cta_link = $node->field_book_cta[0]['value'];
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
     <head>
-<?php print $head; ?>
+        <?php print $head; ?>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title><?php print $head_title; ?></title>
         <?php print $styles; ?>
-<?php print $scripts; ?>
+        <?php print $scripts; ?>
         <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?></script>
         <link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700|Merriweather:300,300i,400,700" rel="stylesheet"/>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
@@ -162,18 +162,18 @@ $book_cta_link = $node->field_book_cta[0]['value'];
             <div class="container">
 
                 <div id="logo-title" class="logo pull-left">
-<?php if (!empty($logo)): ?>
+                    <?php if (!empty($logo)): ?>
                         <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?> Home" rel="home" id="logo">
                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                         </a>
-<?php endif; ?>
+                    <?php endif; ?>
                 </div> <!-- /logo-title -->
 
-                    <?php if (!empty($header)): ?>
+                <?php if (!empty($header)): ?>
                     <div id="header-region" class="pull-right">
-                    <?php print $header; ?>
+                        <?php print $header; ?>
                     </div>
-                    <?php endif; ?>
+                <?php endif; ?>
 
             </div>
         </div><!-- /header -->
@@ -182,21 +182,21 @@ $book_cta_link = $node->field_book_cta[0]['value'];
             <div class="container">
 
                 <div id="navigation" class="menu <?php
-                    if (!empty($primary_links)) {
-                        print "withprimary";
-                    }
-                    ?> ">
-                <?php if (!empty($primary_links)): ?>
+                if (!empty($primary_links)) {
+                    print "withprimary";
+                }
+                ?> ">
+                         <?php if (!empty($primary_links)): ?>
                         <div id="primary" class="clear-block pull-left">
-                         <?php print theme('links', $primary_links, array('class' => 'links primary-links')); ?>
+                            <?php print theme('links', $primary_links, array('class' => 'links primary-links')); ?>
                         </div>
 
                         <div class="search-icon pull-right"><a data-toggle="modal" href="#modalsearch"><i class="fa fa-search"></i><span class="hidden-text">search</span></a>
                         </div>
 
                         <div class="top-login pull-right">				  
-    <?php if ($logged_in) { ?>
-        <?php if ($is_admin)  ?>
+                            <?php if ($logged_in) { ?>
+                                <?php if ($is_admin)  ?>
                                 <a href="/user" class="signup"><span class="hidden-text">Profile</span>Profile</a>
                                 <a href="/logout" class="login">Log out</a>
                             <?php } else { ?>
@@ -205,7 +205,7 @@ $book_cta_link = $node->field_book_cta[0]['value'];
                             <?php } ?>
                         </div>
 
-                        <?php endif; ?>
+                    <?php endif; ?>
                 </div> <!-- /navigation -->
 
             </div>
@@ -219,11 +219,11 @@ $book_cta_link = $node->field_book_cta[0]['value'];
 
                             <div class="pull-left mobile-logo">
                                 <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?> home" class="mobile-header-bottom">
-<?php if ($mobile_logo == TRUE) { ?>
+                                    <?php if ($mobile_logo == TRUE) { ?>
                                         <img src="<?php print base_path() . path_to_theme(); ?>/images/foxley_kingham_logo.png" alt="Foxley Kingham"/>
                                     <?php } else { ?>
                                         <img src="<?php print base_path() . path_to_theme(); ?>/images/foxley_kingham_logo.png" alt="Foxley Kingham">
-                                    <?php } ?>          
+                                        <?php } ?>          
                                 </a>
                             </div>
 
@@ -244,11 +244,11 @@ $book_cta_link = $node->field_book_cta[0]['value'];
                         <div class="collapse navbar-collapse navbar-ex1-collapse ul-no-style list-style list-ul top-nav">
                             <div class="visible-xs navbar-utilities bottom-space">
                                 <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modalsearch"><span class="fa fa-search"></span><span class="sr-only">Search</span></a>
-<?php if ($logged_in) { ?>
-    <?php if ($is_admin)  ?><a type="button" class="btn btn-default" href="/admin">Admin</a>
+                                <?php if ($logged_in) { ?>
+                                            <?php if ($is_admin)  ?><a type="button" class="btn btn-default" href="/admin">Admin</a>
                                     <a type="button" class="btn btn-default" href="/user">Profile</span></a>
                                     <a type="button" class="btn btn-default" href="/logout">Logout</span></a>
-                                        <?php } else { ?>
+                                <?php } else { ?>
                                     <a type="button" class="btn btn-default" href="/user/login">Login</a>
                                     <a type="button" class="btn btn-default" href="/user/register">Register</a>
                                 <?php } ?>
@@ -257,192 +257,192 @@ $book_cta_link = $node->field_book_cta[0]['value'];
                             <!-- Go to www.addthis.com/dashboard to customize your tools -->
                             <div class="addthis_inline_follow_toolbox social-media"></div>
 
-<?php print theme('links', $primary_links, array('class' => 'primary-links list-style'), 'primary-links'); ?>
+                            <?php print theme('links', $primary_links, array('class' => 'primary-links list-style'), 'primary-links'); ?>
 
                         </div>
                     </div>
                 </div>
             </nav>
-<?php print $mobile_contact_utilities; ?>
+            <?php print $mobile_contact_utilities; ?>
         </div><!-- Mobile Header End -->
 
         <div class="jumbotron">
-<?php
-print "<div id='slideshow' class='carousel slide list-ul list-style' data-ride='carousel'>";
+            <?php
+            print "<div id='slideshow' class='carousel slide list-ul list-style' data-ride='carousel'>";
 
-/** Controls * */
-print "<div class='control-header hidden-xs'>";
+            /** Controls * */
+            print "<div class='control-header hidden-xs'>";
 
-print "<div class='control container position-re'>";
+            print "<div class='control container position-re'>";
 
-print "<a class='slide-control slide-control-left position-ab' href='#slideshow' role='button' data-slide='prev'>";
-print "<span class='hidden-text'>prev</span>";
-print "</a>";
+            print "<a class='slide-control slide-control-left position-ab' href='#slideshow' role='button' data-slide='prev'>";
+            print "<span class='hidden-text'>prev</span>";
+            print "</a>";
 
-print "<a class='slide-control slide-control-right position-ab' href='#slideshow' role='button' data-slide='next'>";
-print "<span class='hidden-text'>next</span>";
-print "</a>";
+            print "<a class='slide-control slide-control-right position-ab' href='#slideshow' role='button' data-slide='next'>";
+            print "<span class='hidden-text'>next</span>";
+            print "</a>";
 
-print "</div>";
+            print "</div>";
 
-print "</div>";
+            print "</div>";
 
-print "<ul class='carousel-inner' role='listbox'>";
+            print "<ul class='carousel-inner' role='listbox'>";
 
-if ($slideshow_image_1) {
-    print "<li class='item first odd active'>";
+            if ($slideshow_image_1) {
+                print "<li class='item first odd active'>";
 
-    if ($slideshow_image_1) {
-        print "<div class='banner-image'>";
-        print "$slideshow_image_1";
-        print "</div>";
-    }
+                if ($slideshow_image_1) {
+                    print "<div class='banner-image'>";
+                    print "$slideshow_image_1";
+                    print "</div>";
+                }
 
-    print "<div class='slide-content position-ab'>";
-    print "<div class='container'>";
+                print "<div class='slide-content position-ab'>";
+                print "<div class='container'>";
 
-    print "<div class='row'>";
+                print "<div class='row'>";
 
-    print "<div class='col-xs-12 col-sm-6'>";
+                print "<div class='col-xs-12 col-sm-6'>";
 
-    print "<div class='slide-box'>";
+                print "<div class='slide-box'>";
 
-    print "<div class='slide-text position-re'>";
+                print "<div class='slide-text position-re'>";
 
-    if ($slideshow_strapline_1) {
-        print "<div class='strapline-text'>";
-        print "$slideshow_strapline_1";
-        print "</div>";
-    }
+                if ($slideshow_strapline_1) {
+                    print "<div class='strapline-text'>";
+                    print "$slideshow_strapline_1";
+                    print "</div>";
+                }
 
-    if ($slideshow_cta_1) {
-        print "<div class='action-text more-btn hidden-xs'>";
-        print "$slideshow_cta_1";
-        print "</div>";
-    }
+                if ($slideshow_cta_1) {
+                    print "<div class='action-text more-btn hidden-xs'>";
+                    print "$slideshow_cta_1";
+                    print "</div>";
+                }
 
-    print "</div>";
-    print "</div>";
+                print "</div>";
+                print "</div>";
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";/** Container * */
-    print "</div>";
+                print "</div>";/** Container * */
+                print "</div>";
 
-    print "</li>";/** First slide end * */
-}
+                print "</li>";/** First slide end * */
+            }
 
-if ($slideshow_image_2) {
-    print "<li class='item even'>";
+            if ($slideshow_image_2) {
+                print "<li class='item even'>";
 
-    if ($slideshow_image_2) {
-        print "<div class='banner-image'>";
-        print "$slideshow_image_2";
-        print "</div>";
-    }
+                if ($slideshow_image_2) {
+                    print "<div class='banner-image'>";
+                    print "$slideshow_image_2";
+                    print "</div>";
+                }
 
-    print "<div class='slide-content position-ab hidden-xs'>";
-    print "<div class='container'>";
+                print "<div class='slide-content position-ab hidden-xs'>";
+                print "<div class='container'>";
 
-    print "<div class='row'>";
+                print "<div class='row'>";
 
-    print "<div class='col-sm-6'>";
+                print "<div class='col-sm-6'>";
 
-    print "<div class='slide-box'>";
+                print "<div class='slide-box'>";
 
-    print "<div class='slide-text position-re'>";
+                print "<div class='slide-text position-re'>";
 
-    if ($slideshow_strapline_2) {
-        print "<div class='strapline-text'>";
-        print "$slideshow_strapline_2";
-        print "</div>";
-    }
+                if ($slideshow_strapline_2) {
+                    print "<div class='strapline-text'>";
+                    print "$slideshow_strapline_2";
+                    print "</div>";
+                }
 
-    if ($slideshow_cta_2) {
-        print "<div class='action-text more-btn'>";
-        print "$slideshow_cta_2";
-        print "</div>";
-    }
+                if ($slideshow_cta_2) {
+                    print "<div class='action-text more-btn'>";
+                    print "$slideshow_cta_2";
+                    print "</div>";
+                }
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";/** Container * */
-    print "</div>";
+                print "</div>";/** Container * */
+                print "</div>";
 
-    print "</li>";/** First slide end * */
-}
+                print "</li>";/** First slide end * */
+            }
 
-if ($slideshow_image_3) {
-    print "<li class='item last odd'>";
+            if ($slideshow_image_3) {
+                print "<li class='item last odd'>";
 
-    if ($slideshow_image_3) {
-        print "<div class='banner-image'>";
-        print "$slideshow_image_3";
-        print "</div>";
-    }
+                if ($slideshow_image_3) {
+                    print "<div class='banner-image'>";
+                    print "$slideshow_image_3";
+                    print "</div>";
+                }
 
-    print "<div class='slide-content position-ab hidden-xs'>";
-    print "<div class='container'>";
+                print "<div class='slide-content position-ab hidden-xs'>";
+                print "<div class='container'>";
 
-    print "<div class='row'>";
+                print "<div class='row'>";
 
-    print "<div class='col-sm-6'>";
+                print "<div class='col-sm-6'>";
 
-    print "<div class='slide-box'>";
+                print "<div class='slide-box'>";
 
-    print "<div class='slide-text position-re'>";
+                print "<div class='slide-text position-re'>";
 
-    if ($slideshow_strapline_3) {
-        print "<div class='strapline-text'>";
-        print "$slideshow_strapline_3";
-        print "</div>";
-    }
+                if ($slideshow_strapline_3) {
+                    print "<div class='strapline-text'>";
+                    print "$slideshow_strapline_3";
+                    print "</div>";
+                }
 
-    if ($slideshow_cta_3) {
-        print "<div class='action-text more-btn'>";
-        print "$slideshow_cta_3";
-        print "</div>";
-    }
+                if ($slideshow_cta_3) {
+                    print "<div class='action-text more-btn'>";
+                    print "$slideshow_cta_3";
+                    print "</div>";
+                }
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";
+                print "</div>";
 
-    print "</div>";
+                print "</div>";
 
 
-    print "</div>";/** Container * */
-    print "</div>";
+                print "</div>";/** Container * */
+                print "</div>";
 
-    print "</li>";/** First slide end * */
-}
+                print "</li>";/** First slide end * */
+            }
 
-print "</ul>";
+            print "</ul>";
 
-print "</div><!-- Carousel End -->";
-?>
+            print "</div><!-- Carousel End -->";
+            ?>
         </div><!-- jumbotron -->
 
         <div id="page" class="container">
 
             <div id="container" class="clear-block">
                 <div id="main" class="column"><div id="main-squeeze">
-<?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
-<?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
+                        <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
+                        <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
 
                         <div id="content" class="front-page text-center">
-                        <?php if (!empty($title_content)): ?><h1 class="title" id="page-title"><?php print $title_content; ?></h1><?php endif; ?>
-<?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
+                            <?php if (!empty($title_content)): ?><h1 class="title" id="page-title"><?php print $title_content; ?></h1><?php endif; ?>
+                            <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
                             <?php
                             if (!empty($messages)): print $messages;
                             endif;
@@ -452,29 +452,29 @@ print "</div><!-- Carousel End -->";
                             endif;
                             ?>
                             <div id="content-content" class="clear-block">
-                            <?php print $content_content; ?>
+                                <?php print $content_content; ?>
                             </div> <!-- /content-content -->
-                                <?php print $feed_icons; ?>
+                            <?php print $feed_icons; ?>
                         </div> <!-- /content -->
 
                     </div></div> <!-- /main-squeeze /main -->
 
-<?php if (!empty($left)): ?>
+                <?php if (!empty($left)): ?>
                     <div id="sidebar-left" class="column sidebar">
-                    <?php print $left; ?>
+                        <?php print $left; ?>
                     </div> <!-- /sidebar-left -->
-                    <?php endif; ?>
+                <?php endif; ?>
 
                 <?php if (!empty($right)) { ?>
                     <div id="sidebar-right" class="column sidebar">
-                    <?php print $right; ?>
+                        <?php print $right; ?>
                     </div> <!-- /sidebar-right -->
-                    <?php } ?>
+                <?php } ?>
 
             </div> <!-- /container -->
 
 
-<?php print $closure; ?>
+            <?php print $closure; ?>
 
         </div> <!-- /page -->
 
@@ -514,7 +514,7 @@ print "</div><!-- Carousel End -->";
                 <div class="row">
                     <div class="col-xs-12 more-btn">
                         <h2> <?php print $book_title ?></h2>
-                        <p><?php print $book_strapline ?></p>
+                        <p class="para"><?php print $book_strapline ?></p>
                         <a class="" href="<?php print $book_cta_link ?>"><?php print $book_cta_text ?></a>
                     </div>
                 </div>
@@ -526,10 +526,10 @@ print "</div><!-- Carousel End -->";
                 <div class="row">
                     <div id="footer">
 
-<?php
-if (!empty($footer)): print $footer;
-endif;
-?>
+                        <?php
+                        if (!empty($footer)): print $footer;
+                        endif;
+                        ?>
 
                         <?php
                         if ($footer_bottom) {
@@ -553,13 +553,19 @@ endif;
                         <h2 class="modal-title">Search</h2>
                     </div>
                     <div class="modal-body">
-<?php print $search_box; ?>
+                        <?php print $search_box; ?>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57d29415142a01cf"></script>
-
+        <?php
+        $view = views_get_view('staff_directory_listing');
+        $view->set_display('Staff directory page');
+        $view->render();
+        $count = sizeof($view->result);
+        print sizeof($count);
+        ?>
     </body>
 </html>
