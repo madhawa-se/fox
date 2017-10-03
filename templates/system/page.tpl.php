@@ -78,7 +78,7 @@
  * @see template_preprocess()
  * @see template_preprocess_page()
  */
-   
+   print_r (array_keys($contexts));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -141,7 +141,7 @@ if($node->type == 'pw_staff_profile'){
               <a href="/user" class="signup"><span class="hidden-text">Profile</span>Profile</a>
               <a href="/logout" class="login">Log out</a>
             <?php } else { ?>
-            <a href="/user/login" class="login">Login</a>
+            <a href="/client-login" class="login">Client Login</a>
             <a class="regtr header-btn butn" href="/user/register">Register</a>
           <?php } ?>
         </div>
@@ -213,12 +213,16 @@ if($node->type == 'pw_staff_profile'){
     if($printTitile){
       print $inner_banner;
         print '<div class="inner-banner-cnt position-ab"><div class="container"><div class="row"><div class="col-xs-6 col-sm-4 bg-width"><div class="banner-content">';
-      $menuparent = menu_get_active_trail();
+         $menuparent = menu_get_active_trail();
+         var_dump($menuparent);
         if ($menuparent[1]) {
           if($printTitile != null || $printTitile){
            print '<h1 class="position-re">' . $menuparent[1]['link_title'] . '</h1>'; 
           }
         
+      }else{
+          $xtitle="noooo";
+          print '<h1 class="position-re">' . $xtitle. '</h1>'; 
       }
     print '</div></div></div></div></div>';
     }

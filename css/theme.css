@@ -387,7 +387,7 @@ h6 {
   width: 100%;
   left: 0;
   top: 0;
-  z-index: 9999;
+  z-index: 1000;
   background: #fff;
 }
 #top-nav.sticky ul li a {
@@ -437,6 +437,11 @@ h6 {
   }
   .top-nav .search-icon a {
     padding: 18px 8px;
+  }
+}
+@media (max-width: 991px) {
+  .logo img {
+    max-width: 250px;
   }
 }
 @media (max-width: 767px) {
@@ -573,8 +578,11 @@ h6 {
   -moz-transform: translateY(-50%);
 }
 .jumbotron ul li .slide-content .slide-box .strapline-text {
+  width: 360px;
   margin-bottom: 20px;
-  font-size: 1.667em;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.556em;
   line-height: 47px;
 }
 .jumbotron ul li .slide-content .slide-box .action-text {
@@ -646,6 +654,7 @@ h6 {
     padding: 0 35px 0 20px;
   }
   .jumbotron ul li .slide-content .slide-box .strapline-text {
+    width: auto;
     font-size: 1.500em;
     line-height: 37px;
   }
@@ -1264,7 +1273,6 @@ h6 {
   content: "\00a0";
   height: 100%;
   width: 100%;
-  background: rgba(52, 52, 52, 0.7);
 }
 .inner-banner img {
   width: 100%;
@@ -1275,7 +1283,8 @@ h6 {
 .inner-banner .banner-content {
   height: 100%;
   color: #fff;
-  background: rgba(58, 138, 158, 0.7);
+  background-color: rgba(0, 74, 153, 0.7);
+  text-align: center;
 }
 .inner-banner .banner-content h1 {
   top: 50%;
@@ -1317,7 +1326,7 @@ h6 {
   color: #7d7d7d;
 }
 .breadcrumb li.active {
-  color: #65b8ce;
+  color: #004a99;
 }
 .breadcrumb li + li:before {
   display: inline;
@@ -1607,6 +1616,9 @@ h6 {
 .company-information input[type="text"] {
   height: 45px;
 }
+.contact-section {
+  padding-bottom: 10%;
+}
 .contact-form {
   margin-top: 40px;
 }
@@ -1763,6 +1775,9 @@ h6 {
 .search-results .search-info {
   display: none;
 }
+.front #content h1 {
+  margin-bottom: 36px;
+}
 /* video panel*/
 .video-panel,
 .benifits-panel {
@@ -1775,25 +1790,70 @@ h6 {
   padding-top: 80px;
   padding-bottom: 80px;
 }
+.video-panel h1,
+.work-panel h1,
+.benifits-panel h1,
+.booking-panel h1 {
+  margin-bottom: 36px;
+}
+.video-panel h2,
+.work-panel h2,
+.benifits-panel h2,
+.booking-panel h2 {
+  margin: 20px 0 36px 0;
+}
 .video-panel,
 .work-panel {
-  padding-top: 80px;
+  padding-top: 60px;
   padding-bottom: 80px;
 }
 .video-panel .title,
 .work-panel .title {
   font-size: 1.556em;
-  margin-top: 0;
-  margin-bottom: 1.3em;
 }
 .work-panel {
   padding-top: 70px;
 }
+.work-panel .title {
+  font-size: 1.778em;
+}
+.video-panel .video-btn {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+.video-panel .video-btn .play {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: red;
+  font-size: 75px;
+  text-align: center;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.video-panel .modal-content {
+  display: inline-block;
+}
+.video-panel .model-header {
+  border-color: #eb6209;
+}
+.video-panel .model-header .close {
+  color: #eb6209;
+}
+.benifits-panel {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 .benifits-panel ul li {
-  float: left;
+  display: inline-block;
   width: 50%;
+  padding-bottom: 10px;
   text-align: left;
   list-style: none !important;
+  vertical-align: top;
 }
 .benifits-panel ul li:before {
   display: inline;
@@ -1806,26 +1866,12 @@ h6 {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-left: 10px;
   color: #004a99;
   font-size: 1.333em;
 }
-.benifits-panel ul li:nth-child(1),
-.benifits-panel ul li:nth-child(3),
-.benifits-panel ul li:nth-child(5) {
-  float: left;
-  clear: left;
-}
-.benifits-panel ul li:nth-child(2),
-.benifits-panel ul li:nth-child(4),
-.benifits-panel ul li:nth-child(6) {
-  float: right;
-  clear: right;
-}
 .benifits-panel ul li:nth-child(1):before {
   content: "\f08a";
-}
-.benifits-panel ul li:nth-child(2) {
-  clear: left;
 }
 .benifits-panel ul li:nth-child(2):before {
   content: "\f1cd";
@@ -1846,13 +1892,59 @@ h6 {
   content: "\f046";
 }
 .booking-panel {
+  padding-top: 60px;
   color: #ffffff;
   background-color: #477eb6;
 }
-.booking-panel h2,
+.booking-panel .title {
+  margin-bottom: 0;
+}
+.booking-panel .title,
 .booking-panel a {
   color: inherit;
 }
 .booking-panel p {
-  padding: 20px 10px;
+  padding: 30px 10px;
+}
+@media (max-width: 991px) {
+  .video-panel,
+  .work-panel,
+  .benifits-panel,
+  .booking-panel {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .video-panel .title,
+  .work-panel .title,
+  .benifits-panel .title,
+  .booking-panel .title {
+    font-size: 1.037em;
+    margin: 10px 0 15px 0 !important;
+  }
+  .video-panel .paragraph,
+  .work-panel .paragraph,
+  .benifits-panel .paragraph,
+  .booking-panel .paragraph,
+  .video-panel ul li,
+  .work-panel ul li,
+  .benifits-panel ul li,
+  .booking-panel ul li {
+    font-size: 0.889em;
+    line-height: 25px;
+  }
+  .video-panel .video-btn {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .video-panel .paragraph,
+  .work-panel .paragraph,
+  .benifits-panel .paragraph,
+  .booking-panel .paragraph {
+    padding-bottom: 10px;
+  }
+  .benifits-panel ul li {
+    display: block;
+    width: auto;
+  }
 }

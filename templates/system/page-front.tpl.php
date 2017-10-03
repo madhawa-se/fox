@@ -125,7 +125,7 @@ $images_accreditations = $node->field_images_accreditations[0]['view'];
 $video_title = $node->field_video_title[0]['value'];
 $video_content = $node->field_video_content[0]['value'];
 $video_placeholder = $node->field_video_placeholder[0]['view'];
-$video_link = $node->field_video_cta_link[0]['view'];
+$video_link = $node->field_video_cta_link[0]['value'];
 /** Front columns fields * */
 /** work fields * */
 $work_title = $node->field_work_title[0]['value'];
@@ -200,7 +200,7 @@ $book_cta_link = $node->field_book_cta[0]['value'];
                                 <a href="/user" class="signup"><span class="hidden-text">Profile</span>Profile</a>
                                 <a href="/logout" class="login">Log out</a>
                             <?php } else { ?>
-                                <a href="/user/login" class="login">Login</a>
+                                <a href="/client-login" class="login">Client Login</a>
                                 <a class="regtr header-btn butn" href="/user/register">Register</a>
                             <?php } ?>
                         </div>
@@ -481,13 +481,35 @@ $book_cta_link = $node->field_book_cta[0]['value'];
         <div class="fluid video-panel">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-5"><?php print $video_placeholder ?></div>
+                    <div class="col-sm-5">
+                        <a href="#" class="video-btn" data-toggle="modal" data-target="#video-model"><?php print $video_placeholder ?><i class="play fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
                     <div class="col-sm-7">
                         <h2 class="title"><?php print $video_title; ?></h2>
                         <div class="paragraph"><?php print $video_content; ?></div>
                     </div>
                 </div>
             </div>
+            <!--video modal-->
+            <div id="video-model" class="video-modal modal fade">
+                <div class="modal-dialog modal-lg">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <?php
+                            if ($video_link) {
+                                print "$video_link";
+                            }
+                            ?>
+                        </div>
+                        <button class="close" type="button" data-dismiss="modal"></button>
+                    </div>
+
+                </div>
+            </div> <!--/video modal-->
         </div>
 
         <div class="fluid work-panel">
@@ -513,7 +535,7 @@ $book_cta_link = $node->field_book_cta[0]['value'];
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 more-btn">
-                        <h2> <?php print $book_title ?></h2>
+                        <h2 class="title"> <?php print $book_title ?></h2>
                         <p class="para"><?php print $book_strapline ?></p>
                         <a class="" href="<?php print $book_cta_link ?>"><?php print $book_cta_text ?></a>
                     </div>
@@ -560,12 +582,10 @@ $book_cta_link = $node->field_book_cta[0]['value'];
         </div><!-- /.modal -->
 
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57d29415142a01cf"></script>
-        <?php
-        $view = views_get_view('staff_directory_listing');
-        $view->set_display('Staff directory page');
-        $view->render();
-        $count = sizeof($view->result);
-        print sizeof($count);
-        ?>
+        <script>
+            $(".video-modal").on('hidden.bs.modal', function (e) {
+                $(".video-modal iframe").attr("src", $(".video-modal iframe").attr("src"));
+            });
+        </script>
     </body>
 </html>

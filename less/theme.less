@@ -251,7 +251,7 @@ h1,h2,h3,h4,h5,h6 {
         width: 100%;
         left: 0;
         top: 0;
-        z-index: 9999;
+        z-index: 1000;
         background: #fff;
         ul {
             li {
@@ -331,7 +331,13 @@ h1,h2,h3,h4,h5,h6 {
         }
     }
 }
-
+@media (max-width: 991px) {
+    .logo{
+        img{
+            max-width: 250px;
+        }
+    }
+}
 @media (max-width: 767px) {
     .mobile-logo {
         padding: 0 0 0 15px;
@@ -470,9 +476,13 @@ h1,h2,h3,h4,h5,h6 {
                         -moz-transform: translateY(-50%);
                     }
                     .strapline-text {
+                        width: 360px;
                         margin-bottom: 20px;
-                        font-size: 1.667em;
+                        margin-right: auto;
+                        margin-left: auto;
+                        font-size: 1.556em;
                         line-height: 47px;
+
                     }
                     .action-text {
                         text-align: center;
@@ -554,6 +564,7 @@ h1,h2,h3,h4,h5,h6 {
                     .slide-box {
                         padding: 0 35px 0 20px;
                         .strapline-text {
+                            width: auto;
                             font-size: 1.500em;
                             line-height: 37px;
                         }
@@ -1380,7 +1391,7 @@ h1,h2,h3,h4,h5,h6 {
             content: "\00a0";
             height: 100%;
             width: 100%;
-            background: rgba(52, 52, 52, 0.7);
+            //background: rgba(52, 52, 52, 0.7);
         }
     }
     img {
@@ -1392,7 +1403,8 @@ h1,h2,h3,h4,h5,h6 {
     .banner-content {
         height: 100%;
         color: #fff;
-        background: rgba(58, 138, 158, 0.7);
+        background-color: rgba(0, 74, 153, 0.7);
+        text-align:center;
         h1 {
             top: 50%;
             margin: 0 28px;
@@ -1441,16 +1453,16 @@ h1,h2,h3,h4,h5,h6 {
     li{ 
         font-size: 0.778em;
         a {
-            color: #7d7d7d;
+            color: @color-gray-dark;
         }
         &.active {
-            color: #65b8ce;
+            color: @color-blue;
         }
         + li {
             &:before {
                 .icon-reset();
                 content: '\f105';
-                color: #7d7d7d;
+                color: @color-gray-dark;
             }
         }
     }
@@ -1777,6 +1789,9 @@ h1,h2,h3,h4,h5,h6 {
         height: 45px;
     }
 }
+.contact-section{
+    padding-bottom: 10%;
+}
 .contact-form {
     margin-top: 40px;
 }
@@ -2035,49 +2050,87 @@ h1,h2,h3,h4,h5,h6 {
         display: none;
     }
 }
+.front #content {
+    h1{
+        margin-bottom: 36px;
+    }
+}
 
 /* video panel*/
 .video-panel,.benifits-panel{
     background-color: @color-gray;
 }
 .video-panel,.work-panel,.benifits-panel,.booking-panel{
+    h1{
+        margin-bottom: 36px;
+    }
+    h2{
+        margin: 20px 0 36px 0;
+    }
     padding-top: 80px;
     padding-bottom: 80px;
 }
 .video-panel,.work-panel{
-    padding-top: 80px;
+    padding-top: 60px;
     padding-bottom: 80px;
 
     .title{
         font-size: 1.556em;
-        margin-top: 0;
-        margin-bottom: 1.3em;
     }
     .paragraph{
     }
 }
 .work-panel{
     padding-top: 70px;
+    .title{
+        font-size: 1.778em;
+    }
+}
+.video-panel{
+    .video-btn{
+        display: block;
+        position: relative;
+        text-decoration:none;
+        .play{
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: red;
+            font-size: 75px;
+            text-align: center;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+    .modal-content{
+        display: inline-block;
+    }
+    .model-header{
+        border-color: @color-orange;
+        .close{
+            color: @color-orange;
+        }
+    }
+
 }
 .benifits-panel{
+    padding-top: 60px;
+    padding-bottom: 60px;
     ul {
         li{
-            float: left;
+            display: inline-block;
             width: 50%;
+            padding-bottom: 10px;
             text-align: left;
             list-style: none !important;
+            vertical-align:top;
             &:before{
                 .icon-reset;
+                padding-left: 10px;
                 color:@color-blue;
                 font-size: 1.333em;
-            }
-            &:nth-child(1),&:nth-child(3),&:nth-child(5){
-                float: left;
-                clear: left;
-            }
-            &:nth-child(2),&:nth-child(4),&:nth-child(6){
-                float: right;
-                clear: right;
             }
             &:nth-child(1){
                 &:before {
@@ -2085,7 +2138,6 @@ h1,h2,h3,h4,h5,h6 {
                 }
             }
             &:nth-child(2){
-                clear:left;
                 &:before {
                     content: "\f1cd";
                 }
@@ -2117,12 +2169,54 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 .booking-panel{
+    padding-top: 60px;
+    .title{
+        margin-bottom: 0;
+    }
     color:@color-white;
     background-color: #477eb6;
-    h2,a{
+    .title,a{
         color:inherit;
     }
     p{
-        padding: 20px 10px;
+        padding: 30px 10px;
+    }
+}
+
+@media (max-width: 991px) {
+    .video-panel,.work-panel,.benifits-panel,.booking-panel{
+        padding-top: 40px;
+        padding-bottom:40px;
+        .title{
+            font-size: 1.037em;
+            margin: 10px 0 15px 0 !important;
+        }
+        .paragraph,ul li{
+            font-size: 0.889em;
+            line-height: 25px;
+        }
+    }
+    .video-panel{
+        .video-btn{
+            display:block;
+            .play{
+            }
+        }
+
+    }
+}
+@media (max-width: 767px) {
+    .video-panel,.work-panel,.benifits-panel,.booking-panel{
+        .paragraph{
+            padding-bottom: 10px;
+        }
+    }
+    .benifits-panel{
+        ul {
+            li{
+                display: block;
+                width: auto;
+            }
+        }
     }
 }
